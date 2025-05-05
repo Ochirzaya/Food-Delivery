@@ -1,4 +1,5 @@
 import Login from "./login/page";
+import SignupPage from "./sign-up/page";
 
 export default function AuthLayout({
   children,
