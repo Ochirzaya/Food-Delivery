@@ -9,8 +9,21 @@ type foodProps = {
   ingredients: string;
   foodName: string;
 };
+
+type DataTypes = {
+  name: string;
+  results: [
+    {
+      image: string;
+      price: number;
+      ingredients: string;
+      foodName: string;
+    }
+  ];
+};
+
 export const MenuContainer = () => {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState<DataTypes[]>([]);
   const fetchData = async () => {
     const res = await axios.get(
       `${process.env.NEXT_PUBLIC_BACKEND_URI}/food/all?categoryId=${""}`
